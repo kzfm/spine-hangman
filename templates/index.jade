@@ -1,0 +1,39 @@
+!!! 5
+html
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    title Backbone Hangman
+    meta(content='A simple application that demonstrates usage of Brunch', name='description')
+    meta(content='Tri Vuong', name='author')
+    link(rel="stylesheet", type="text/css", href=url_for('static', filename='application.css'))
+    script(src=url_for('static', filename='application.js'), type='text/javascript')
+    script(type="text/javascript", charset="utf-8")
+      var jQuery  = require("jqueryify");
+      var exports = this;
+      jQuery(function(){
+        var App = require("index");
+        exports.app = new App({el: $("body")});      
+      });
+  body
+    #stage
+      #west
+        #ground
+          #string
+          #hangman
+            img#head(src=url_for('static', filename='images/head.png'))
+            img#body(src=url_for('static', filename='images/body.png'))
+            img#right_arm(src=url_for('static', filename='images/right_arm.png'))
+            img#left_arm(src=url_for('static', filename='images/left_arm.png'))
+            img#right_leg(src=url_for('static', filename='images/right_leg.png'))
+            img#left_leg(src=url_for('static', filename='images/left_leg.png'))
+      #east
+        #hint
+          span Hint: It's a country
+        #word
+        #characters
+        #answer
+    #footer
+      #options
+        input#new_game.action_button(type='button', value='New game')
+      #info
+        | Spine Hangman (with Flask)

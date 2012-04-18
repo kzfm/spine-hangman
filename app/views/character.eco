@@ -1,0 +1,3 @@
+<% for character in @characters: %>
+<span class="character" char="<%= character %>"><%= character %></span>
+<% end %>

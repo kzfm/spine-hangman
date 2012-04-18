@@ -1,0 +1,8 @@
+<% for character in @characters: %>
+  <% if character is " ": %>
+    <span class="spacer"></span>
+    <% else: %>
+    <span class="placeholder"><%- character %></span>
+  <% end %>
+<% end %>
+   
